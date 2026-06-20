@@ -7,8 +7,8 @@ typedef struct
 {
     char name[4];
     ULARGE_INTEGER total_space;
-    ULARGE_INTEGER used_space;
-    ULARGE_INTEGER avail_space;
+    ULARGE_INTEGER free_space;
+    ULARGE_INTEGER occupied_space;
 } Drive;
 
 void get_drive_stats();
