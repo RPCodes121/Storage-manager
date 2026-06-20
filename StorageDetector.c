@@ -13,7 +13,7 @@ void get_drive_stats() // checks bitmask for drives and fills the drive struct
     ULARGE_INTEGER free_space;
 
     DWORD driveMask = GetLogicalDrives(); // checks OS for drives and returns the bitmask
-    for (size_t i = 0; i < 26; i++)
+    for (int i = 0; i < 26; i++)
     {
         DWORD set = driveMask & (1UL << i); // checks whether and operation between driveMask and shift mask is non-zero
         if (set)
