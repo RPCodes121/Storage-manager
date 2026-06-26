@@ -2,8 +2,9 @@
 #include <stdlib.h>
 #include "StorageDetector.h"
 
+Drive drives[26];
 int main()
 {
-    get_drive_stats();
+    int count = get_drive_stats(drives, 26);
     return 0;
 }

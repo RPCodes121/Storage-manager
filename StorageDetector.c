@@ -4,11 +4,9 @@
 #include <windows.h>
 #include "StorageDetector.h"
 
-Drive drives[26];
-int drive_count = 0;
-
-void get_drive_stats() // checks bitmask for drives and fills the drive struct
+int get_drive_stats(Drive drives[], int max_drives) // checks bitmask for drives and fills the drive struct
 {
+    int drive_count = 0;
     ULARGE_INTEGER total_space;
     ULARGE_INTEGER free_space;
 
@@ -24,11 +22,8 @@ void get_drive_stats() // checks bitmask for drives and fills the drive struct
             drives[i].total_space = total_space;
             drives[i].free_space = free_space;
             drives[i].occupied_space.QuadPart = total_space.QuadPart - free_space.QuadPart;
-            printf("%s\n", drives[i].name);
-            printf("total capacity:%d\n", drives[i].total_space.QuadPart);
-            printf("free space :%d\n", drives[i].free_space.QuadPart);
-            printf("occupied_space:%d\n", drives[i].occupied_space.QuadPart);
             drive_count++;
+            return drive_count;
         }
     }
 }
