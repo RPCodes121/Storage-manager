@@ -11,6 +11,6 @@ typedef struct
     ULARGE_INTEGER occupied_space;
 } Drive;
 
-void get_drive_stats();
+int get_drive_stats();
 
 #endif
