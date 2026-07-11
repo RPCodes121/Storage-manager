@@ -1,6 +1,6 @@
 # Dynamic Storage Manager Daemon
 
-The aim of this project is to create a daemon (background process) that scans the logical drives present in your OS and checks the storage in them and based on it moves files from a drive which is almost full to another drive having ample space.
+The aim of this project is to create a daemon (background process) that scans the logical drives present in your OS and checks the storage in them and based on it moves files from a drive which is almost full to another drive having ample space. Currently it only works for windows. 
 
 ## Current Version
 1.0-pre-alpha
