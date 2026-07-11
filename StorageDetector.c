@@ -17,11 +17,11 @@ int get_drive_stats(Drive drives[], int max_drives) // checks bitmask for drives
         if (set)
         {
             char drive_letter = 'A' + i; // converts bit position into drive letter
-            snprintf(drives[i].name, sizeof(drives[i].name), "%c:\\", drive_letter);
-            GetDiskFreeSpaceEx(drives[i].name, &free_space, &total_space, NULL);
-            drives[i].total_space = total_space;
-            drives[i].free_space = free_space;
-            drives[i].occupied_space.QuadPart = total_space.QuadPart - free_space.QuadPart;
+            snprintf(drives[drive_count].name, sizeof(drives[drive_count].name), "%c:\\", drive_letter);
+            GetDiskFreeSpaceEx(drives[drive_count].name, &free_space, &total_space, NULL);
+            drives[drive_count].total_space = total_space;
+            drives[drive_count].free_space = free_space;
+            drives[drive_count].occupied_space.QuadPart = total_space.QuadPart - free_space.QuadPart;
             drive_count++;
         }
     }
